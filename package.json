@@ -1,0 +1,28 @@
+{
+  "name": "Makathon-SLICKSTARTER",
+  "version": "1.0.0",
+  "description": "A university crowdfunding platform in node.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha && jasmine-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karinnielsen/Makathon-SLICKSTARTER.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karinnielsen/Makathon-SLICKSTARTER/issues"
+  },
+  "homepage": "https://github.com/karinnielsen/Makathon-SLICKSTARTER",
+  "dependencies": {
+    "ejs": "^1.0.0",
+    "ejs-layouts": "0.0.1"
+  },
+  "devDependencies": {
+    "mongodb": "^1.4.19",
+    "zombie": "^2.1.1",
+    "chai": "^1.10.0",
+  }
+}
