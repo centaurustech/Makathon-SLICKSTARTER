@@ -26,7 +26,10 @@ describe('test', function() {
   });
 
   it('says hello world I fucking hate you', function(){
-    expect(browser.text("h1")).to.eql("Hello world, I fucking hate you")
+    expect(browser.text("h1")).to.eql("Slickstarter")
   });
 
+  it('has a sign up button', function () {
+    expect(browser.text("a")).to.eql("Sign up")
+  });
 });
