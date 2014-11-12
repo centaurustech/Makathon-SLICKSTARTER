@@ -4,7 +4,8 @@
   "description": "A university crowdfunding platform in node.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha && jasmine-node"
+    "test": "mocha && jasmine-node",
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,14 @@
     "ejs": "^1.0.0",
     "ejs-layouts": "0.0.1",
     "mysql": "^2.5.3",
-    "sequelize": "^2.0.0-rc2"
+    "sequelize": "^2.0.0-rc2",
+    "body-parser" : "*",
+    "debug" : "*",
+    "express" : "*",
+    "jade" : "*",
+    "sequelize-cli" : "*",
+    "serve-favicon" : "*",
+    "sqlite3" : "^0.3.0"
   },
   "devDependencies": {
     "mongodb": "^1.4.19",

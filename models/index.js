@@ -2,11 +2,15 @@
 
 var fs = require('fs');
 var path = require('path');
-var Sequelize = require('sequelize');
 var env = process.env.NODE_ENV || "development";
 // var config    = require(__dirname + '/../node_modules/lib/config/config.js')[env];
-var config = require('config');
-var sequelize = new Sequelize(config.database, config.username, config.password, config);
+var config = require('config').database;
+
+var Sequelize = require('sequelize');
+var sequelize = new Sequelize('database', 'username', 'password', {
+  dialect: 'mysql'
+})
+// var sequelize = new Sequelize(config.name, config.username, config.password, config.options);
 
 fs
   .readdirSync(__dirname)

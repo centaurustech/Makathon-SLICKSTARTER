@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h1= title
+  p The students of Slickstarter
+
+  h2 Creating a new student
+  form(action="/users/create", method="post")
+    input(type="text", name="username")
+    input(type="submit")
+
+  h2 Students
+
+  ul
+    each student in students
+      li
+        = user.username
+        ul
+          li
+            | Creating a new project:
+            form(action="/students/" + student.id + "/projects/create", method="post", style="display: inline")
+              input(type="text", name="title")
+              input(type="submit")
+          each project in student.Projects
+            li
+              = project.name
+              |
+              | (
+              a(href="/students" + student.id + "/projects" + project.id + "/destroy") Destroy
+              | )
