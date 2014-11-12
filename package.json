@@ -4,7 +4,7 @@
   "description": "A university crowdfunding platform in node.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha && jasmine-node"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -21,8 +21,12 @@
     "ejs-layouts": "0.0.1"
   },
   "devDependencies": {
-    "mongodb": "^1.4.19",
-    "zombie": "^2.1.1",
     "chai": "^1.10.0",
+    "karma": "^0.12.24",
+    "karma-chrome-launcher": "^0.1.5",
+    "karma-jasmine": "^0.2.3",
+    "mocha": "^2.0.1",
+    "mongodb": "^1.4.19",
+    "zombie": "^2.1.1"
   }
 }
