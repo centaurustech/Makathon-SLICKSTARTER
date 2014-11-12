@@ -18,11 +18,13 @@
   "homepage": "https://github.com/karinnielsen/Makathon-SLICKSTARTER",
   "dependencies": {
     "ejs": "^1.0.0",
-    "ejs-layouts": "0.0.1"
+    "ejs-layouts": "0.0.1",
+    "mysql": "^2.5.3",
+    "sequelize": "^2.0.0-rc2"
   },
   "devDependencies": {
     "mongodb": "^1.4.19",
     "zombie": "^2.1.1",
-    "chai": "^1.10.0",
+    "chai": "^1.10.0"
   }
 }
