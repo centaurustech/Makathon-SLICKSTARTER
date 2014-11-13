@@ -7,7 +7,8 @@ router.post('/create', function(req, res){
   console.log(req.body.lastname);
   models.Student.create({
     firstName: req.param('username'),
-    lastName: req.param('lastname')
+    lastName: req.param('lastname'),
+    email: req.param('email')
   }).success(function(){
     res.redirect('/');
   });

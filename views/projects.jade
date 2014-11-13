@@ -1,12 +1,23 @@
 extends layout
 
 block content
-  h1= title
-  p The students of Slickstarter
+  h1 
+    each project in students
+      = project.name + '\'s Page'
 
   ul
     each project in students
       li
         = project.name
-        ul
-      
+        br
+        = project.description
+        br
+        = project.raise
+
+  h2 Donate to this project
+    each project in students
+      form(action="/donate/" + project.id, method="post")
+      | Amount
+      input(type="number", name="payment")
+      input(type="submit")
+    

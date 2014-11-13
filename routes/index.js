@@ -77,9 +77,21 @@ router.get('/students/:student_id', function(req, res){
       students: students
     });
   });
-
 });
 
+// donate :project id
+// render: donate
+
+// router.get('/donate/:project_id', function(req, res){
+//   models.Project.findAll({
+//     where: {id: req.param(':project_id')}
+//   }).success(function(students){
+//     res.render('donate', {
+//       title: 'Slickstarter Projects',
+//       students: students
+//     });
+//   });
+// });
 
 
 
