@@ -69,6 +69,31 @@ router.get('/projects/:project_id', function(req, res) {
   });
 });
 
-router.get('/students/:student_id')
+router.get('/students/:student_id', function(req, res){
+  models.Student.findAll({
+    where: { id: req.param('student_id') }
+  }).success(function(students){
+    res.render('profiles', {
+      students: students
+    });
+  });
+
+});
+
+
+
+
+
+// router.get('/students/:student_id', function(req, res) {
+//   models.Student.findAll({
+//       where: { id: req.param('student_id') }
+//   }).success(function(students){
+//     res.render('profiles', {
+//       students: students
+//     });
+//   });
+// });
+
+
 
 module.exports = router;

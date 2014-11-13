@@ -1,0 +1,30 @@
+//- extends layout
+//- 
+//- block content
+//-   h1
+//-     each student in students
+//-         = student.firstName + '\'s Profile'
+//-           p The students of Slickstarter
+//- 
+//-   ul
+//-     each student in students
+//-       li
+//-         = student.firstName
+//-         = student.secondName
+//-         ul
+
+
+extends layout
+
+block content
+  h1
+    each student in students
+      = student.firstName + '\'s Profile'
+        p The students of Slickstarter
+        
+  ul
+    each student in students
+      li
+        = student.firstName
+        = student.secondName
+        ul      

@@ -20,6 +20,7 @@ router.post('/:student_id/projects/create', function (req, res) {
   }).success(function(student) {
     models.Project.create({
       name: req.param('project'),
+      description: req.param('description'),
       raise: req.param('raise')
     }).success(function(name) {
       name.setStudent(student).success(function() {
