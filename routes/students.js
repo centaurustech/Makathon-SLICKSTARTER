@@ -2,7 +2,7 @@ var models = require('../models');
 var express = require('express');
 var router = express.Router();
 
-router.post('create', function(req, res){
+router.post('/create', function(req, res){
   models.Student.create({
     username: req.param('username')
   }).success(function(){
