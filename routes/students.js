@@ -3,19 +3,23 @@ var express = require('express');
 var router = express.Router();
 
 router.post('/create', function(req, res){
+  console.log(req.body.username);
+  console.log(req.body.lastname);
   models.Student.create({
-    username: req.param('username')
+    firstName: req.param('username'),
+    lastName: req.param('lastname')
   }).success(function(){
     res.redirect('/');
   });
 });
 
 router.post('/:student_id/projects/create', function (req, res) {
+  console.log(req.body.project)
   models.Student.find({
     where: { id: req.param('student_id') }
   }).success(function(student) {
     models.Project.create({
-      name: req.param('name')
+      name: req.param('project')
     }).success(function(name) {
       name.setStudent(student).success(function() {
         res.redirect('/');
