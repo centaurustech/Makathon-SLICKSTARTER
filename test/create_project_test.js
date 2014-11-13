@@ -21,7 +21,7 @@ describe('home page', function() {
   });
 
 it("displays a project title", function(){
-  expect(browser.text("h1")).to.eql("Get Started")
+  expect(browser.text("h1")).to.eql("Create Your Project")
 });
 
   describe('clicking links', function() {
