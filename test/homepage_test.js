@@ -3,14 +3,13 @@ var chai = require('chai');
 var expect = chai.expect;
 var Browser = require('zombie');
 
-
 describe('test', function() {
 
   var browser
 
   before(function() {
-    this.app = app.listen(3000);
-    browser = new Browser({ site: 'http://localhost:3000' });
+    this.app = app.listen(9292);
+    browser = new Browser({ site: 'http://localhost:9292' });
   });
 
   beforeEach(function(done) {
@@ -25,7 +24,7 @@ describe('test', function() {
     expect(browser.success).to.be.true
   });
 
-  it('says hello world I fucking hate you', function(){
+  it('hello world', function(){
     expect(browser.text("h1")).to.eql("Hello world, I fucking hate you")
   });
 

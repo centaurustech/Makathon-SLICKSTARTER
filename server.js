@@ -1,13 +1,28 @@
 var express = require('express');
 var app = express();
 var http = require('http').createServer(app);
+var bodyParser = require('body-parser');
 
-app.set('views', __dirname + '/views')
-app.set('view engine', 'ejs-layouts')
-app.use(express.static(__dirname + '/public'))
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
-app.get ('/', function(req, res){
-  res.render('index.ejs')
+
+app.set('views', __dirname + '/views');
+app.use(express.static(__dirname + '/public'));
+app.set('view engine', 'ejs')
+
+
+app.get('/', function(request, response){
+  response.render('index')
+});
+
+app.get('/createproject', function(request, response){
+  response.render('createProject')
+});
+
+app.post('/form', function(request, response){
+
+  console.log(request.body)
 });
 
 http.listen(3000);

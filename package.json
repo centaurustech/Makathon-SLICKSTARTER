@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/karinnielsen/Makathon-SLICKSTARTER",
   "dependencies": {
+    "body-parser": "^1.9.2",
     "ejs": "^1.0.0",
     "ejs-layouts": "0.0.1"
   },
@@ -27,6 +28,6 @@
     "karma-jasmine": "^0.2.3",
     "mocha": "^2.0.1",
     "mongodb": "^1.4.19",
-    "zombie": "^2.1.1"
+    "zombie": "^2.0.0-alpha31"
   }
 }
