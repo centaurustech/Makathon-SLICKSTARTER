@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p The students of Slickstarter
+
+  ul
+    each project in students
+      li
+        = project.name
+        ul
+      

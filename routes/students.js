@@ -19,7 +19,8 @@ router.post('/:student_id/projects/create', function (req, res) {
     where: { id: req.param('student_id') }
   }).success(function(student) {
     models.Project.create({
-      name: req.param('project')
+      name: req.param('project'),
+      raise: req.param('raise')
     }).success(function(name) {
       name.setStudent(student).success(function() {
         res.redirect('/');

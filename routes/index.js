@@ -58,4 +58,17 @@ router.get('/', function(req, res){
   });
 });
 
+router.get('/projects/:project_id', function(req, res) {
+  models.Project.findAll({
+      where: { id: req.param('project_id') }
+  }).success(function(students){
+    res.render('projects', {
+      title: 'Slickstarter Projects',
+      students: students
+    });
+  });
+});
+
+router.get('/students/:student_id')
+
 module.exports = router;
