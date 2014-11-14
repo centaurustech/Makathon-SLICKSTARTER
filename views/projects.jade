@@ -1,24 +1,24 @@
 html
-  include navbar
-  body
-
-extends layout
+  head
+    title= title
+    link(href='/style.css', rel='stylesheet')
 
 block content
   h1 
     each project in students
       = project.name + '\'s Page'
+      #navbar Slickstarter
 
   ul
     each project in students
       li
         h1
+          #name
           = project.name
           br
-          h3
-          = project.description
-          br
-          = project.raise
+        = project.description
+        br
+        = project.raise
 
   h2 Donate to this project
     each project in students
