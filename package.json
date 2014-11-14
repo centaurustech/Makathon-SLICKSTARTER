@@ -18,16 +18,17 @@
   },
   "homepage": "https://github.com/karinnielsen/Makathon-SLICKSTARTER",
   "dependencies": {
+    "body-parser": "*",
+    "debug": "*",
     "ejs": "^1.0.0",
     "ejs-layouts": "0.0.1",
+    "express": "*",
+    "jade": "*",
     "sequelize": "^2.0.0-rc2",
-    "body-parser" : "*",
-    "debug" : "*",
-    "express" : "*",
-    "jade" : "*",
-    "sequelize-cli" : "*",
-    "serve-favicon" : "*",
-    "sqlite3" : "*"
+    "sequelize-cli": "*",
+    "serve-favicon": "*",
+    "sqlite3": "*",
+    "stylus": "^0.49.3"
   },
   "devDependencies": {
     "mongodb": "^1.4.19",

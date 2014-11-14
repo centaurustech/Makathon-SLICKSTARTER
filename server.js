@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var Sequelize = require("sequelize");
 var bodyParser = require('body-parser');
+var stylus = require('stylus');
 app.use(bodyParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());

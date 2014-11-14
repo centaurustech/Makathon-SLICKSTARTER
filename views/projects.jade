@@ -8,11 +8,12 @@ block content
   ul
     each project in students
       li
-        = project.name
-        br
-        = project.description
-        br
-        = project.raise
+        h1
+          = project.name
+          br
+          = project.description
+          br
+          = project.raise
 
   h2 Donate to this project
     each project in students

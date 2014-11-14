@@ -2,7 +2,6 @@ extends layout
 
 block content
   h1= title
-  p The students of Slickstarter
 
   h2 Sign up
   form(action="/students/create", method="post")
@@ -18,6 +17,13 @@ block content
       
   h2 View all Projects
   
+  ul
+    each student in students
+      each project in student.Projects
+        li
+          a(href="/projects/"+ project.id)= project.name
+            ul
+  
               
   h2 View all Users
   
@@ -27,11 +33,10 @@ block content
         = student.firstName + ' '
         = student.lastName
         ul
-          each project in student.Projects
             li
               br
               a(href="/students/" + student.id) - View User Profile
-
+              ul
 
   h2 Students and Projects
 
