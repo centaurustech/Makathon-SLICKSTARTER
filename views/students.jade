@@ -2,6 +2,12 @@ extends layout
 
 block content
   h1= title
+  
+  a(href="/signup") Sign up
+  br
+  a(href="/login") Login
+  br
+  a(href="/createproject") Create a Project
 
   //- h2 Sign up
   //- form(action="/students/create", method="post")
@@ -49,10 +55,11 @@ block content
         br
         = student.course
         ul
-            li
-              br
-              a(href="/students/" + student.id) - View User Profile
+
+          br
+        a(href="/students/" + student.id) - View User Profile
               ul
+                br
 
   h2 Students and Projects
 

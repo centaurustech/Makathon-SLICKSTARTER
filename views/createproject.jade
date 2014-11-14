@@ -1,0 +1,20 @@
+
+
+block content
+  ul
+    each student in students
+      li
+        = student.firstName + ' '
+        = student.lastName
+        ul
+          li
+            | Create a new project:
+            br
+            form(action="/students/" + student.id + "/projects/create", method="post", style="display: inline")
+              | Project Name
+              input(type="text", name="project")
+              | Description 
+              input(type="text", name="description")
+              | Amount to raise
+              input(type="integer", name="raise")
+              input(type="submit")

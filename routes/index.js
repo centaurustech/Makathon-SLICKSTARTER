@@ -90,6 +90,17 @@ models.Student.findAll({
 });
 });
 
+router.get('/createproject', function(req, res){
+models.Student.findAll({
+  include: [ models.Project ]
+}).success(function(students) {
+  res.render('createproject', {
+    title: 'Slickstarter Projects',
+    students: students
+  });
+});
+});
+
 // donate :project id
 // render: donate
 

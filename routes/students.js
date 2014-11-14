@@ -49,11 +49,16 @@ router.get('/:student_id/projects/:project_id/destroy', function (req, res) {
   });
 });
 
+
+
+
+
 router.post('/donate/:project_id', function (){
-  model.Project.findAll({
+  model.Project.find({
     where: { id: req.param('project_id') }
   }).success(function(project){
-    donation: req.param('payment')
+    donation: req.param('donation')
+  }).success(function(project){
   });
 });
 

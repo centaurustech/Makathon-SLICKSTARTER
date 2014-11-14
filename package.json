@@ -24,6 +24,7 @@
     "ejs-layouts": "0.0.1",
     "express": "*",
     "jade": "*",
+    "jquery": "^2.1.1",
     "sequelize": "^2.0.0-rc2",
     "sequelize-cli": "*",
     "serve-favicon": "*",
