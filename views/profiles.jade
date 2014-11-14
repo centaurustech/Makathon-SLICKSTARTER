@@ -24,9 +24,15 @@ block content
   ul
     each student in students
       li
-        = student.firstName
-        br
+        = student.firstName + ' '
         = student.lastName
         br
+        = student.university
+        br
+        = student.course
+        br
+        = student.level
+        br
         = student.email
+        
         ul

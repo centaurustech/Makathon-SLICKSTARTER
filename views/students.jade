@@ -3,17 +3,26 @@ extends layout
 block content
   h1= title
 
-  h2 Sign up
-  form(action="/students/create", method="post")
-    | First Name
-    input(type="text", name="username")
-    br
-    | Second Name
-    input(type="text", name="lastname")
-    br
-    | Email address
-    input(type="text", name="email")
-    input(type="submit")
+  //- h2 Sign up
+  //- form(action="/students/create", method="post")
+  //-   | First Name
+  //-   input(type="text", name="username")
+  //-   br
+  //-   | Second Name
+  //-   input(type="text", name="lastname")
+  //-   br
+  //-   | Email address
+  //-   input(type="text", name="email")
+  //-   br
+  //-   | University
+  //-   input(type="text", name="university")
+  //-   br
+  //-   | Course
+  //-   input(type="text", name="course")
+  //-   br
+  //-   | Level
+  //-   input(type="text", name="level")
+  //-   input(type="submit")
       
   h2 View all Projects
   
@@ -22,7 +31,10 @@ block content
       each project in student.Projects
         li
           a(href="/projects/"+ project.id)= project.name
-            ul
+          ul
+          = project.description
+          br
+          = student.firstName + ' wants to raise ' + project.raise
   
               
   h2 View all Users
@@ -32,6 +44,10 @@ block content
       li
         = student.firstName + ' '
         = student.lastName
+        br
+        = student.university
+        br
+        = student.course
         ul
             li
               br

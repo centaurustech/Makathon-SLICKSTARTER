@@ -79,6 +79,17 @@ router.get('/students/:student_id', function(req, res){
   });
 });
 
+router.get('/signup', function(req, res){
+models.Student.findAll({
+  include: [ models.Project ]
+}).success(function(students) {
+  res.render('signup', {
+    title: 'Slickstarter Projects',
+    students: students
+  });
+});
+});
+
 // donate :project id
 // render: donate
 

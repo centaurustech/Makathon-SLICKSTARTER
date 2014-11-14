@@ -4,7 +4,10 @@ module.exports = function(sequelize, DataTypes) {
   var Student = sequelize.define("Student", {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
-    email: DataTypes.STRING
+    email: DataTypes.STRING,
+    university: DataTypes.STRING,
+    level: DataTypes.STRING,
+    course: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {

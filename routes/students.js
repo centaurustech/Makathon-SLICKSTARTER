@@ -8,7 +8,9 @@ router.post('/create', function(req, res){
   models.Student.create({
     firstName: req.param('username'),
     lastName: req.param('lastname'),
-    email: req.param('email')
+    email: req.param('email'),
+    university: req.param('university'),
+    course: req.param('course')
   }).success(function(){
     res.redirect('/');
   });
@@ -46,5 +48,14 @@ router.get('/:student_id/projects/:project_id/destroy', function (req, res) {
     });
   });
 });
+
+router.post('/donate/:project_id', function (){
+  model.Project.findAll({
+    where: { id: req.param('project_id') }
+  }).success(function(project){
+    donation: req.param('payment')
+  });
+});
+
 
 module.exports = router;

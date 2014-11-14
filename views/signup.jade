@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1= title
+  
+  h2 Sign up
+  form(action="/students/create", method="post")
+    | First Name
+    input(type="text", name="username")
+    br
+    | Second Name
+    input(type="text", name="lastname")
+    br
+    | Email address
+    input(type="text", name="email")
+    br
+    | University
+    input(type="text", name="university")
+    br
+    | Course
+    input(type="text", name="course")
+    br
+    | Level
+    input(type="text", name="level")
+    input(type="submit")
