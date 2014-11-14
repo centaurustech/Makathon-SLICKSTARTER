@@ -1,20 +1,35 @@
-
+extends layout
+html
+head
+  link(rel='stylesheet', href='/stylesheets/style.css')
 
 block content
+  h1
+    #navbar slickstarter
+    #menu
+        a(href="/", class="menu1") Home &nbsp&nbsp
+        a(href="/signup", class="menu1") Sign up &nbsp&nbsp
+        a(href="/login", class="menu1") Login &nbsp&nbsp
+        a(href="/createproject", class="menu1") Create a Project &nbsp&nbsp
   ul
     each student in students
       li
-        = student.firstName + ' '
-        = student.lastName
+        //- = student.firstName + ' '
+        //- = student.lastName
         ul
           li
+            br
             | Create a new project:
             br
             form(action="/students/" + student.id + "/projects/create", method="post", style="display: inline")
+              br
               | Project Name
-              input(type="text", name="project")
+              input(type="text", name="project", id="create")
+              br
               | Description 
-              input(type="text", name="description")
+              input(type="text", name="description", id="create")
+              br
               | Amount to raise
-              input(type="integer", name="raise")
-              input(type="submit")
+              input(type="integer", name="raise", id="create")
+              br
+              input(type="submit", id="submit")

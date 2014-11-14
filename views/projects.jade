@@ -1,29 +1,48 @@
 html
+  head
+    link(rel='stylesheet',href='/style.css')
+    
   include navbar
   body
-
+    
 extends layout
 
 block content
   h1 
     each project in students
-      = project.name + '\'s Page'
+        #project
+          br
+          = project.name + '\'s Page'
+      
+      #navbar slickstarter
+      #menu
+          a(href="/", class="menu1") Home &nbsp&nbsp
+          a(href="/signup", class="menu1") Sign up &nbsp&nbsp
+          a(href="/login", class="menu1") Login &nbsp&nbsp
+          a(href="/createproject", class="menu1") Create a Project &nbsp&nbsp
 
   ul
     each project in students
       li
         h1
+            br
           = project.name
           br
           h3
           = project.description
           br
+          br
+          | Total amount to raise:
+          br
           = project.raise
 
   h2 Donate to this project
     each project in students
-      form(action="/donate/" + project.id, method="post")
+      form(action="/donate/" + project.id, method="post", id="form")
+      br
       | Amount
-      input(type="number", name="payment")
-      input(type="submit")
+      br
+      input(type="number", name="payment", id="donate", placeholder="Enter Amount")
+      br
+      input(type="submit", value="Donate", id="submit")
     

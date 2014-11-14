@@ -1,25 +1,35 @@
 extends layout
+html
+head
+  link(rel='stylesheet', href='/stylesheets/style.css')
 
 block content
-  h1= title
-  
+  h1
+    #navbar slickstarter
+  #menu
+      a(href="/", class="menu1") Home &nbsp&nbsp
+      a(href="/signup", class="menu1") Sign up &nbsp&nbsp
+      a(href="/login", class="menu1") Login &nbsp&nbsp
+      a(href="/createproject", class="menu1") Create a Project &nbsp&nbsp
+  br
   h2 Sign up
   form(action="/students/create", method="post")
     | First Name
-    input(type="text", name="username")
+    input(type="text", name="username", id="create")
     br
     | Second Name
-    input(type="text", name="lastname")
+    input(type="text", name="lastname", id="create")
     br
     | Email address
-    input(type="text", name="email")
+    input(type="text", name="email", id="create")
     br
     | University
-    input(type="text", name="university")
+    input(type="text", name="university", id="create")
     br
     | Course
-    input(type="text", name="course")
+    input(type="text", name="course", id="create")
     br
     | Level
-    input(type="text", name="level")
-    input(type="submit")
+    input(type="text", name="level", id="create") 
+    br
+    input(type="submit", id="submit")

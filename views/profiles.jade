@@ -12,11 +12,18 @@
 //-         = student.firstName
 //-         = student.secondName
 //-         ul
-
-
-extends layout
+html
+  head
+    link(rel='stylesheet',href='/style.css')
 
 block content
+br
+h1
+  #navbar slickstarter
+  #menu
+    a(href="/signup", class="menu1") Sign up &nbsp&nbsp
+    a(href="/login", class="menu1") Login &nbsp&nbsp
+    a(href="/createproject", class="menu1") Create a Project &nbsp&nbsp
   h1
     each student in students
       = student.firstName + '\'s Profile'
@@ -36,3 +43,17 @@ block content
         = student.email
         
         ul
+          
+          | Create a new project:
+          br
+          form(action="/students/" + student.id + "/projects/create", method="post", style="display: inline")
+            | Project Name:  
+            input(type="text", name="project", id="create")
+            br
+            | Description:  
+            input(type="text", name="description", id="create", class="description")
+            br
+            | Amount to raise:   
+            input(type="text", name="raise", id="create")
+            br
+            input(type="submit", id="submit")

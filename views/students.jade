@@ -1,13 +1,13 @@
 extends layout
 
 block content
-  h1= title
-  
-  a(href="/signup") Sign up
   br
-  a(href="/login") Login
-  br
-  a(href="/createproject") Create a Project
+  h1
+    #navbar slickstarter
+    #menu
+      a(href="/signup", class="menu1") Sign up &nbsp&nbsp
+      a(href="/login", class="menu1") Login &nbsp&nbsp
+      a(href="/createproject", class="menu1") Create a Project &nbsp&nbsp
 
   //- h2 Sign up
   //- form(action="/students/create", method="post")
@@ -30,7 +30,7 @@ block content
   //-   input(type="text", name="level")
   //-   input(type="submit")
       
-  h2 View all Projects
+  h2 Current Projects
   
   ul
     each student in students
@@ -40,10 +40,12 @@ block content
           ul
           = project.description
           br
-          = student.firstName + ' wants to raise ' + project.raise
+          = ' started by ' + student.firstName
+          br
+          = project.name + ' need to raise ' + project.raise
   
               
-  h2 View all Users
+  h2 Current Users
   
   ul
     each student in students
@@ -61,39 +63,38 @@ block content
               ul
                 br
 
-  h2 Students and Projects
+
 
 
   ul
     each student in students
       li
-        = student.firstName + ' '
-        = student.lastName
         ul
           li
             | Create a new project:
             br
             form(action="/students/" + student.id + "/projects/create", method="post", style="display: inline")
               | Project Name:  
-              input(type="text", name="project")
+              input(type="text", name="project", id="create")
               br
               | Description:  
-              input(type="text", name="description")
+              input(type="text", name="description", id="create", class="description")
               br
               | Amount to raise:   
-              input(type="text", name="raise")
-              input(type="submit")
+              input(type="text", name="raise", id="create")
+              br
+              input(type="submit", id="submit")
           each project in student.Projects
             li
-              = project.name + ' started by ' + student.firstName
-              br
-              = project.description
-              br
-              = student.firstName + ' wants to raise ' + project.raise
-              br
-              br
-              a(href="/students/" + student.id + "/projects/" + project.id + "/destroy") - Delete
-              br
-              a(href="/students/" + student.id) - View User Profile
-              br
-              a(href="/projects/" + project.id) - View Project Page
+              //- = project.name + ' started by ' + student.firstName
+              //- br
+              //- = project.description
+              //- br
+              //- = student.firstName + ' wants to raise ' + project.raise
+              //- br
+              //- br
+              //- a(href="/students/" + student.id + "/projects/" + project.id + "/destroy") - Delete
+              //- br
+              //- a(href="/students/" + student.id) - View User Profile
+              //- br
+              //- a(href="/projects/" + project.id) - View Project Page
